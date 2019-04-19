@@ -1,0 +1,172 @@
+/*
+ * Video Stylesheet file.
+ */
+
+@font-face {
+    /*        font-family: "samplef";
+            font-style: normal;
+            font-weight: normal;
+            src: url("../Need for Font.ttf") format("truetype");
+    */
+    src: url("../font/steelfish-rg.ttf");
+    /*src: url("../steelfish_rg.otf") format("truetype");*/
+}
+@font-face {
+    src: url("../font/Digit.TTF");
+}
+@font-face {
+    src: url("../font/TRON.TTF");
+}
+.mainFxmlClass {
+
+}
+
+* {
+    -fx-my-label-color_release:yellow;
+    -fx-my-label-color_pressed:black;
+    -fx-my-label_break: midnightblue;
+    -fx-my-border_break_color: midnightblue;
+    -fx-my-labeldigit-color: navy ;
+     -fx-my-progressbar-color1: chartreuse;
+     -fx-my-progressbar-color2: gainsboro ;
+}
+
+.text{
+    -fx-font-family: "Steelfish Rg"; 
+    -fx-font-size:30.0;  
+}
+.labelbreak{
+    -fx-text-fill: -fx-my-labeldigit-color;
+    -fx-text-fill: -fx-my-label_break;
+    -fx-alignment: CENTER_LEFT;
+}
+.labelSfondo {
+    -fx-background-image: url("../pix/lapSfondo.png");
+    -fx-background-size: stretch;
+    -fx-alignment:center;
+}
+.labelSfondo.time .text {
+    -fx-font-family: "Digit"; 
+    /*    -fx-font-family: "TRON"; */
+    -fx-font-size:36.0;
+    -fx-font-weight: bold;
+
+}
+.labelSfondo.laps .text {
+    /*-fx-font-family: "Digit";*/ 
+    /*    -fx-font-family: "TRON"; */
+    -fx-font-size:36.0;
+    -fx-font-weight: bold;
+}
+
+.labelintesta .text {
+    /*    -fx-font-family: "Digit"; 
+        -fx-font-family: "TRON"; */
+    -fx-font-size:30.0;
+}
+
+.labelintesta {
+    -fx-background-image: url("../pix/intestazione.png");
+    -fx-background-size: stretch;
+    -fx-text-fill: -fx-my-label-color_release;
+    -fx-alignment:center;
+}
+/*.labelintesta:pressed {
+    -fx-background-image: url("../pix/parallelog-red.png");
+    -fx-text-fill: -fx-my-label-color_pressed;
+}*/
+
+.labelintesta.f20 .text{
+    /*    -fx-font-family: "TRON"; 
+        -fx-font-family: "Digit"; */
+    -fx-font-size:20.0;
+}
+.labelintesta.f30 .text{
+    -fx-font-size:30.0;
+}
+.labelintesta.f24 .text{
+    -fx-font-size:24.0;
+}
+.labelintesta.f28 .text{
+    -fx-font-size:28.0;
+}
+
+.buttonExit .text{
+    -fx-font-size:30.0;
+}
+.buttonExit {
+    -fx-background-image: url("../pix/buttonExitReleased.png");
+    -fx-background-size: stretch;
+    -fx-alignment: center;
+    -fx-background-color: transparent; 
+    -fx-text-fill: -fx-my-label-color_release;
+}
+.buttonExit:hover {
+    -fx-background-image: url("../pix/buttonExitOver.png");
+    -fx-cursor: hand;
+    /*-fx-border-color: yellowgreen;*/
+}
+.buttonExit:pressed {
+    -fx-background-image: url("../pix/buttonExitPressed.png");
+    -fx-cursor: hand;
+    /*-fx-border-color: yellowgreen;*/
+}
+
+.progress-bar {
+    /*-fx-skin: "org.ma.motofx.BarBackgroundProgressBarSkin";*/
+    /*-fx-background-image:url("../pix/glUAd.png");*/
+    /*-fx-background-image:url("../pix/freno_0.png");*/
+/*    -fx-background-image:url("../pix/background_progress.png");
+    -fx-background-size: stretch;*/
+}
+
+.progress-bar > .track {
+    -fx-background-color: transparent;
+    -fx-border-color: -fx-my-border_break_color;
+}
+
+/*.progress-bar > .bar {
+    -fx-background-color: linear-gradient(
+        from 50px .50em to 3.35em 6px,
+        repeat,
+        -fx-accent 20%,
+        -fx-accent 79%,
+        derive(-fx-accent, 30%) 50%,
+        derive(-fx-accent, 30%) 99%
+    );
+}
+.progress-bar > .bar {
+     -fx-background-color: linear-gradient(
+         from 25% 30% to 20% 30%, 
+         repeat,  
+         green 80%, 
+         ghostwhite 90%);
+}
+
+.progress-bar > .bar {
+    -fx-background-color: linear-gradient(
+         from 25% 30% to 20% 30%, 
+        repeat,
+        -fx-accent 20%,
+        -fx-accent 79%,
+        derive(-fx-accent, 40%) 50%,
+        derive(-fx-accent, 40%) 99%
+    );
+}*/
+.progress-bar > .bar {
+     -fx-background-color: linear-gradient(
+        from 50px .50em to 3.35em 6px,
+         repeat,  
+         -fx-my-progressbar-color1 80%, 
+         -fx-my-progressbar-color2 90%);
+}
+.progress-bar:diagonale > .bar {
+    -fx-background-color: linear-gradient(
+        from 0em 0.75em to 2.75em 0px,
+        repeat,
+        -fx-accent 0%,
+        -fx-accent 49%,
+        derive(-fx-accent, 30%) 50%,
+        derive(-fx-accent, 30%) 99%
+        );
+}

@@ -1,0 +1,283 @@
+/*
+ * Empty Stylesheet file.
+ *Posizione (<resource>/styles/)
+ */
+
+@font-face {
+    /*        font-family: "samplef";
+            font-style: normal;
+            font-weight: normal;
+            src: url("../Need for Font.ttf") format("truetype");
+    */
+    src: url("../font/steelfish-rg.ttf");
+    /*src: url("../steelfish_rg.otf") format("truetype");*/
+}
+@font-face {
+    src: url("../font/Digit.TTF");
+}
+@font-face {
+    src: url("../font/TRON.TTF");
+}
+.mainFxmlClass {
+/*    -fx-background-image:url("file:conf/background-img.png");
+    -fx-background-image: url("../pix/background-panel.png");
+    -fx-background-size: stretch; */
+}
+
+.text {
+    -fx-font-family: "Steelfish Rg"; 
+    -fx-font-size:24.0;  
+}
+
+* {
+    -fx-my-label-color_release:yellow;
+    -fx-my-label-color_pressed:black;
+    -fx-my-button-color_release: aquamarine ;
+    -fx-my-labeldigit-color: aquamarine ;
+}
+.slider .axis{
+  -fx-tick-label-font-size: 1.5em;
+}
+.text-slider .maintitle {
+	font-size: 57px;
+}
+.text-slider .subtitle {
+	font-size: 30px;
+}
+.slider .thumb {
+    /*-fx-background-image :url("your image");*/ 
+    -fx-padding: 12;
+/*    -fx-pref-height: 20;
+    -fx-pref-width: 20;*/
+}
+.slider .track {
+    -fx-control-inner-background: darkgrey ;
+     /*-fx-background-color: linear-gradient(grey,gray);*/
+    -fx-pref-height:16; 
+}
+
+/*.slider:horizontal .track {
+    -fx-pref-width:20;
+}*/
+
+
+.labeldigit {
+    -fx-text-fill: -fx-my-labeldigit-color;
+}
+.labeldigit .text{
+    -fx-font-family: "Digit"; 
+    -fx-font-size:20.0;
+}
+.labeldark .text {
+    /*    -fx-font-family: "Digit"; 
+        -fx-font-family: "TRON"; */
+    -fx-font-size:20.0;
+}
+
+.labeldark {
+    -fx-background-image: url("../pix/parallelog-dark.png");
+    -fx-background-size: stretch;
+    -fx-text-fill: -fx-my-label-color_release;
+    -fx-alignment:center;
+}
+/*.labeldark:pressed {
+    -fx-background-image: url("../pix/parallelog-red.png");
+    -fx-text-fill: -fx-my-label-color_pressed;
+}*/
+
+.labeldark.f20 .text{
+    /*    -fx-font-family: "TRON"; 
+        -fx-font-family: "Digit"; */
+    -fx-font-size:20.0;
+}
+.labeldark.f30 .text{
+    -fx-font-size:30.0;
+}
+.labeldark.f24 .text{
+    -fx-font-size:24.0;
+}
+.labeldark.f28 .text{
+    -fx-font-size:28.0;
+}
+
+.buttondark .text{
+    /*-fx-font-family: "TRON";*/ 
+    -fx-font-size:24.0;
+}
+.buttondark{
+    -fx-background-image: url("../pix/parallelog-dark.png");
+    -fx-background-size: stretch;
+    -fx-alignment: center;
+    -fx-background-color: transparent; 
+    -fx-text-fill: -fx-my-button-color_release;
+}
+.buttondark:hover{  
+    -fx-cursor: hand;
+}
+.buttondark:pressed{    
+    -fx-background-image: url("../pix/parallelog-red.png");
+    -fx-text-fill: -fx-my-label-color_pressed;
+}
+.buttondark.f30 .text{
+    -fx-font-size:30.0;
+}
+.buttondark.f28 .text{
+    -fx-font-size:28.0;
+}
+
+.buttonStartExit .text{
+    -fx-font-size:30.0;
+}
+.buttonStartExit {
+    -fx-background-size: stretch;
+    -fx-alignment: center;
+    -fx-background-color: transparent; 
+    -fx-text-fill: -fx-my-label-color_release;
+}
+.buttonStartExit:hover {
+    -fx-cursor: hand;
+    -fx-border-color: yellowgreen;
+}
+.buttonStartExit.exit {
+    -fx-background-image: url("../pix/redbuttonEXIT.png");
+}
+.buttonStartExit.start {
+    -fx-background-image: url("../pix/redbuttonSTART.png");
+}
+
+
+
+.headerlabel .text{
+    -fx-font-family: "TRON"; 
+    -fx-font-size:28.0;
+}
+.headerlabel {
+    -fx-text-fill: lightslategray;
+}
+
+.lwd{
+    -fx-background-color: transparent;
+}
+
+.lwd .label {
+    -fx-text-fill: -fx-my-button-color_release ;
+}
+.lwd .list-cell:filled:selected .label {
+    -fx-text-fill: white;
+}
+.lwd .list-cell:filled:hover {
+    -fx-background-image: url("../pix/parallelog-grey.png");
+    /*-fx-border-color: yellowgreen;*/
+}
+.lwd .list-cell:filled:selected  {
+    -fx-background-image: url("../pix/parallelog-red.png");
+}
+.lwd .list-cell:empty {
+    -fx-background-color: transparent; 
+}
+.lwd .list-cell:filled .text{
+    -fx-font-size:24.0; /*Alza e abbassa l' height'. La lunghezza dipende da ListView*/
+    /*-fx-font-family: "TRON";*/ 
+}
+.lwd .list-cell:filled {
+    -fx-background-image: url("../pix/parallelog-dark.png");
+    -fx-background-size: stretch;
+    -fx-alignment: center;
+    -fx-background-color: transparent; 
+    /*-fx-control-inner-background: white ;*/
+    /*-fx-control-inner-background-alt: derive(-fx-control-inner-background, 50%);*/
+}
+
+.lwd.f28 .list-cell:filled .text{
+    -fx-font-size:28.0; /*Alza e abbassa l' height'. La lunghezza dipende da ListView*/
+    /*-fx-font-family: "TRON";*/ 
+}
+
+/*
+.progress-indicator:indeterminate > .spinner {
+    * Applying to undo styling from .spinner, reported in RT-37965 
+    -fx-background-color: red;
+     originally was 
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}*/
+.spinnerLap {
+    -fx-font-size:24.0;
+    -fx-background-color: transparent;
+}
+/*
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button {
+    -fx-body-color: yellow;
+}
+
+.spinner .increment-arrow-button:hover,
+.spinner .decrement-arrow-button:hover {
+     interpolate color between yellow and red based on first color brightness 
+    -fx-body-color: ladder(#333, yellow 0%, red 100%);
+}
+
+.spinner .increment-arrow-button:hover:pressed,
+.spinner .decrement-arrow-button:hover:pressed,
+.spinner .increment-arrow-button:pressed,
+.spinner .decrement-arrow-button:pressed {
+     interpolate color between yellow and red based on first color brightness 
+    -fx-body-color: ladder(#AAA, yellow 0%, red 100%);
+}*/
+
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(#131313 0%, #424141 100%);
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+/*
+.table-view .table-cell{
+    -fx-text-fill: white;
+}
+
+.table-row-cell{
+    -fx-background-color: -fx-table-cell-border-color, #616161;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;  0 
+}
+
+.table-row-cell:odd{
+    -fx-background-color: -fx-table-cell-border-color, #424242;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;  0   
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #005797;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}
+
+.table-view > .virtual-flow > .scroll-bar:vertical,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track,
+.table-view > .virtual-flow > .scroll-bar:vertical > .track-background, 
+.table-view > .virtual-flow > .scroll-bar:horizontal,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track,
+.table-view > .virtual-flow > .scroll-bar:horizontal > .track-background {
+    -fx-background-color: transparent;
+}
+
+
+
+.table-view > .virtual-flow > .scroll-bar > .increment-button, 
+.table-view > .virtual-flow > .scroll-bar > .decrement-button {
+    -fx-opacity: 0;
+}*/
+.table-view{
+   -fx-background-color: transparent;
+}
+

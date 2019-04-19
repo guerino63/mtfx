@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="paneSetup" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="777.0" prefWidth="1370.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ma.mototrainerp.FXMLSetupController">
+    <stylesheets>
+        <URL value="@/styles/fxmlsetup.css" />
+    </stylesheets>
+    <children>
+        <Button fx:id="buttonAdmin" defaultButton="true" layoutX="1250.0" layoutY="6.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onButtonAdmin" prefHeight="33.0" prefWidth="105.0" text="Admin" AnchorPane.rightAnchor="11.0">
+            <font>
+                <Font name="Lucida Sans Regular" size="18.0" />
+            </font>
+            <textFill>
+                <LinearGradient endX="1.0" endY="1.0">
+                    <stops>
+                        <Stop color="#7c7b61" />
+                        <Stop color="#0387a1" offset="1.0" />
+                    </stops>
+                </LinearGradient>
+            </textFill></Button>
+        <Line endX="544.5857543945312" endY="-1.1171867847442627" layoutX="122.0" layoutY="49.0" startX="-111.0" startY="-1.1171875" AnchorPane.leftAnchor="10.292892456054688" AnchorPane.rightAnchor="698.7071685791016" AnchorPane.topAnchor="47.175705671310425" />
+        <Label layoutX="14.0" layoutY="-5.0" prefHeight="60.0" prefWidth="760.0" styleClass="headerlabel" stylesheets="@../styles/fxmlsetup.css" text="MTS Moto Training System" />
+        <GridPane hgap="10.0" layoutX="12.0" layoutY="55.0" minHeight="271.0" prefHeight="280.0" prefWidth="1351.0" vgap="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="30.0" prefWidth="302.0" />
+                <ColumnConstraints hgrow="NEVER" maxWidth="1.7976931348623157E308" minWidth="10.0" percentWidth="20.0" prefWidth="230.0" />
+                <ColumnConstraints hgrow="NEVER" maxWidth="1.7976931348623157E308" minWidth="10.0" percentWidth="20.0" prefWidth="200.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="300.0" minWidth="10.0" percentWidth="20.0" prefWidth="200.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="300.0" minWidth="10.0" percentWidth="20.0" prefWidth="200.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="187.0" minHeight="10.0" percentHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="187.0" minHeight="10.0" percentHeight="37.0" prefHeight="150.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="187.0" minHeight="10.0" percentHeight="38.0" prefHeight="150.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="100.0" minHeight="10.0" percentHeight="5.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="100.0" minHeight="-Infinity" percentHeight="15.0" prefHeight="100.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" prefHeight="53.0" prefWidth="289.0" stylesheets="@../styles/fxmlsetup.css" text="CIRCUITS" GridPane.halignment="CENTER">
+                    <styleClass>
+                        <String fx:value="labeldark" />
+                        <String fx:value="f28" />
+                        <String fx:value="f30" />
+                    </styleClass>
+                </Label>
+                <ListView fx:id="listCircuit" onMouseClicked="#listCircuitSelected" pickOnBounds="false" prefHeight="242.0" prefWidth="311.0" styleClass="lwd" stylesheets="@../styles/fxmlsetup.css" GridPane.rowIndex="1" GridPane.rowSpan="2">
+                    <GridPane.margin>
+                        <Insets left="15.0" />
+                    </GridPane.margin>
+                </ListView>
+                <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" prefHeight="53.0" prefWidth="242.0" stylesheets="@../styles/fxmlsetup.css" text="LEVELS" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                    <styleClass>
+                        <String fx:value="labeldark" />
+                        <String fx:value="f28" />
+                        <String fx:value="f30" />
+                    </styleClass>
+                </Label>
+                <ListView fx:id="listViewDifficult" prefHeight="50.0" styleClass="lwd" stylesheets="@../styles/fxmlsetup.css" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="2">
+                    <GridPane.margin>
+                        <Insets left="15.0" />
+                    </GridPane.margin></ListView>
+                <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" prefHeight="53.0" prefWidth="310.0" stylesheets="@../styles/fxmlsetup.css" text="SETTINGS" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="CENTER">
+                    <styleClass>
+                        <String fx:value="labeldark" />
+                        <String fx:value="f28" />
+                        <String fx:value="f30" />
+                    </styleClass>
+                </Label>
+                <VBox alignment="TOP_RIGHT" prefHeight="62.0" prefWidth="223.0" spacing="3.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                    <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" prefHeight="56.0" prefWidth="270.0" stylesheets="@../styles/fxmlsetup.css" text="Number of laps">
+                            <styleClass>
+                                <String fx:value="labeldark" />
+                                <String fx:value="f24" />
+                                <String fx:value="f28" />
+                            </styleClass>
+                        </Label>
+                        <Button focusTraversable="false" mnemonicParsing="false" onAction="#importCircuits" prefHeight="46.0" prefWidth="185.0" stylesheets="@../styles/fxmlsetup.css" text="Import Circuit">
+                            <styleClass>
+                                <String fx:value="buttondark" />
+                                <String fx:value="f28" />
+                            </styleClass>
+                        </Button>
+                    </children>
+                    <GridPane.margin>
+                        <Insets left="15.0" top="5.0" />
+                    </GridPane.margin>
+                </VBox>
+                <VBox alignment="TOP_RIGHT" spacing="5.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                    <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" prefHeight="45.0" prefWidth="270.0" stylesheets="@../styles/fxmlsetup.css" text="Insert Your Name...">
+                            <styleClass>
+                                <String fx:value="labeldark" />
+                                <String fx:value="f24" />
+                                <String fx:value="f28" />
+                            </styleClass>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" prefHeight="41.0" prefWidth="270.0" stylesheets="@../styles/fxmlsetup.css" text="Insert Your Bike...">
+                            <styleClass>
+                                <String fx:value="labeldark" />
+                                <String fx:value="f24" />
+                                <String fx:value="f28" />
+                            </styleClass>
+                        </Label>
+                    </children>
+                    <GridPane.margin>
+                        <Insets left="15.0" top="5.0" />
+                    </GridPane.margin>
+                </VBox>
+                <VBox prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                    <children>
+                        <TextField fx:id="textfieldPilota" prefHeight="24.0" prefWidth="200.0" promptText="Your name here..." style="-fx-background-color: grey;">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="5.0" />
+                            </VBox.margin>
+                        </TextField>
+                        <TextField fx:id="textfieldBike" prefHeight="25.0" prefWidth="200.0" promptText="Your bike name here..." style="-fx-background-color: grey;">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="10.0" />
+                            </VBox.margin>
+                        </TextField>
+                    </children>
+                    <GridPane.margin>
+                        <Insets top="5.0" />
+                    </GridPane.margin>
+                </VBox>
+                <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" prefHeight="49.0" prefWidth="295.0" stylesheets="@../styles/fxmlsetup.css" text="TYPE OF GEARBOX" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+                    <styleClass>
+                        <String fx:value="labeldark" />
+                        <String fx:value="f28" />
+                    </styleClass>
+                </Label>
+                <ListView fx:id="labelViewGearBoxType" prefHeight="200.0" prefWidth="200.0" styleClass="lwd" stylesheets="@../styles/fxmlsetup.css" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets left="30.0" />
+                    </GridPane.margin>
+                </ListView>
+                <Button mnemonicParsing="false" onAction="#startTheRace" prefHeight="32.0" prefWidth="175.0" stylesheets="@../styles/fxmlsetup.css" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.rowSpan="2" GridPane.valignment="BOTTOM">
+                    <styleClass>
+                        <String fx:value="buttonStartExit" />
+                        <String fx:value="start" />
+                    </styleClass>
+                    <effect>
+                        <Reflection />
+                    </effect>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#onButtonExit" prefHeight="32.0" prefWidth="175.0" stylesheets="@../styles/fxmlsetup.css" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.rowSpan="2" GridPane.valignment="BOTTOM">
+                    <styleClass>
+                        <String fx:value="buttonStartExit" />
+                        <String fx:value="exit" />
+                    </styleClass>
+                    <effect>
+                        <Reflection />
+                    </effect>
+                </Button>
+            <VBox prefHeight="67.0" prefWidth="242.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <children>
+                  <Slider fx:id="sliderLaps" blockIncrement="0.0" majorTickUnit="1.0" max="5.0" min="1.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0" prefHeight="20.0" prefWidth="223.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" stylesheets="@../styles/fxmlsetup.css" value="1.0">
+                     <padding>
+                        <Insets top="50.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <effect>
+                        <ColorAdjust brightness="-0.38" contrast="0.14" hue="-0.12" saturation="-0.55" />
+                     </effect>
+                  </Slider>
+               </children>
+            </VBox>
+            </children>
+        </GridPane>
+        <GridPane layoutX="10.0" layoutY="404.0" prefHeight="333.0" prefWidth="366.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="990.0" AnchorPane.topAnchor="404.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.0" minWidth="10.0" prefWidth="234.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="600.0" minWidth="10.0" prefWidth="300.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="95.0" minHeight="10.0" prefHeight="71.0" vgrow="NEVER" />
+                <RowConstraints maxHeight="171.0" minHeight="10.0" prefHeight="34.0" vgrow="NEVER" />
+                <RowConstraints minHeight="10.0" prefHeight="208.0" vgrow="ALWAYS" />
+            </rowConstraints>
+        </GridPane>
+        <GridPane layoutX="-10.0" layoutY="404.0" prefHeight="311.0" prefWidth="1281.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <columnConstraints>
+                <ColumnConstraints minWidth="10.0" percentWidth="29.0" prefWidth="100.0" />
+                <ColumnConstraints minWidth="10.0" percentWidth="26.0" prefWidth="100.0" />
+                <ColumnConstraints minWidth="10.0" percentWidth="6.0" prefWidth="100.0" />
+                <ColumnConstraints minWidth="10.0" percentWidth="6.0" prefWidth="100.0" />
+                <ColumnConstraints minWidth="10.0" percentWidth="9.0" prefWidth="100.0" />
+                <ColumnConstraints maxWidth="95.0" minWidth="10.0" percentWidth="6.0" prefWidth="81.0" />
+                <ColumnConstraints maxWidth="129.0" minWidth="10.0" percentWidth="5.0" prefWidth="119.0" />
+                <ColumnConstraints maxWidth="139.0" minWidth="10.0" percentWidth="9.0" prefWidth="119.0" />
+                <ColumnConstraints maxWidth="95.0" minWidth="10.0" percentWidth="6.0" prefWidth="81.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" prefHeight="53.0" prefWidth="310.0" stylesheets="@../styles/fxmlsetup.css" text="CALIBRATION" GridPane.columnIndex="3" GridPane.columnSpan="6" GridPane.halignment="CENTER">
+                    <styleClass>
+                        <String fx:value="labeldark" />
+                        <String fx:value="f28" />
+                        <String fx:value="f30" />
+                    </styleClass>
+                </Label>
+                <Label fx:id="labAcceleration" focusTraversable="false" styleClass="labeldigit" stylesheets="@../styles/fxmlsetup.css" text="888888" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets right="5.0" />
+                    </GridPane.margin>
+                </Label>
+                <Label fx:id="labThrClose" focusTraversable="false" styleClass="labeldigit" stylesheets="@../styles/fxmlsetup.css" text="888888" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                    <padding>
+                        <Insets right="5.0" />
+                    </padding>
+                </Label>
+                <Label fx:id="labThrOpen" focusTraversable="false" prefHeight="25.0" prefWidth="73.0" styleClass="labeldigit" stylesheets="@../styles/fxmlsetup.css" text="888888" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                    <padding>
+                        <Insets right="5.0" />
+                    </padding>
+                </Label>
+                <Label fx:id="labLean" focusTraversable="false" prefHeight="25.0" prefWidth="70.0" styleClass="labeldigit" stylesheets="@../styles/fxmlsetup.css" text="888888" GridPane.columnIndex="5" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                    <padding>
+                        <Insets right="5.0" />
+                    </padding>
+                </Label>
+                <Label fx:id="labFrontBrake" focusTraversable="false" styleClass="labeldigit" stylesheets="@../styles/fxmlsetup.css" text="888888" GridPane.columnIndex="8" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets right="5.0" />
+                    </GridPane.margin>
+                </Label>
+                <Label fx:id="labFrontBrakeAllClose" focusTraversable="false" styleClass="labeldigit" stylesheets="@../styles/fxmlsetup.css" text="888888" GridPane.columnIndex="8" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                    <GridPane.margin>
+                        <Insets right="5.0" />
+                    </GridPane.margin>
+                </Label>
+                <Label fx:id="labFrontBrakeAllOpen" focusTraversable="false" styleClass="labeldigit" stylesheets="@../styles/fxmlsetup.css" text="888888" GridPane.columnIndex="8" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                    <GridPane.margin>
+                        <Insets right="5.0" />
+                    </GridPane.margin>
+                </Label>
+                <Label fx:id="labRearBrake" focusTraversable="false" styleClass="labeldigit" stylesheets="@../styles/fxmlsetup.css" text="888888" GridPane.columnIndex="8" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                    <GridPane.margin>
+                        <Insets right="5.0" />
+                    </GridPane.margin>
+                </Label>
+                <Label fx:id="labRearBrakeAllClose" focusTraversable="false" styleClass="labeldigit" stylesheets="@../styles/fxmlsetup.css" text="888888" GridPane.columnIndex="8" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                    <GridPane.margin>
+                        <Insets right="5.0" />
+                    </GridPane.margin>
+                </Label>
+                <Label fx:id="labRearBrakeAllOpen" focusTraversable="false" styleClass="labeldigit" stylesheets="@../styles/fxmlsetup.css" text="888888" GridPane.columnIndex="8" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+                    <GridPane.margin>
+                        <Insets right="5.0" />
+                    </GridPane.margin>
+                </Label>
+                <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" prefHeight="30.0" prefWidth="287.0" stylesheets="@../styles/fxmlsetup.css" text="ACCELERATION" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                    <styleClass>
+                        <String fx:value="labeldark" />
+                        <String fx:value="f24" />
+                    </styleClass>
+                </Label>
+                <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" prefHeight="30.0" prefWidth="287.0" stylesheets="@../styles/fxmlsetup.css" text="Throttle Close" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                    <styleClass>
+                        <String fx:value="labeldark" />
+                        <String fx:value="f24" />
+                    </styleClass>
+                </Label>
+                <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" prefHeight="30.0" prefWidth="287.0" stylesheets="@../styles/fxmlsetup.css" text="Throttle Open" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                    <styleClass>
+                        <String fx:value="labeldark" />
+                        <String fx:value="f24" />
+                    </styleClass>
+                </Label>
+                <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" prefHeight="30.0" prefWidth="287.0" stylesheets="@../styles/fxmlsetup.css" text="LEAN" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                    <styleClass>
+                        <String fx:value="labeldark" />
+                        <String fx:value="f24" />
+                    </styleClass>
+                </Label>
+                <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" prefHeight="30.0" prefWidth="287.0" stylesheets="@../styles/fxmlsetup.css" text="FRONT BRAKE" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                    <styleClass>
+                        <String fx:value="labeldark" />
+                        <String fx:value="f24" />
+                    </styleClass>
+                </Label>
+                <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" prefHeight="30.0" prefWidth="287.0" stylesheets="@../styles/fxmlsetup.css" text="REAR BRAKE" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                    <styleClass>
+                        <String fx:value="labeldark" />
+                        <String fx:value="f24" />
+                    </styleClass>
+                </Label>
+                <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" prefHeight="30.0" prefWidth="287.0" stylesheets="@../styles/fxmlsetup.css" text="All Close" GridPane.columnIndex="7" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                    <styleClass>
+                        <String fx:value="labeldark" />
+                        <String fx:value="f24" />
+                    </styleClass>
+                </Label>
+                <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" prefHeight="30.0" prefWidth="287.0" stylesheets="@../styles/fxmlsetup.css" text="All Close" GridPane.columnIndex="7" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                    <styleClass>
+                        <String fx:value="labeldark" />
+                        <String fx:value="f24" />
+                    </styleClass>
+                </Label>
+                <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" prefHeight="30.0" prefWidth="287.0" stylesheets="@../styles/fxmlsetup.css" text="All Open" GridPane.columnIndex="7" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                    <styleClass>
+                        <String fx:value="labeldark" />
+                        <String fx:value="f24" />
+                    </styleClass>
+                </Label>
+                <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" prefHeight="30.0" prefWidth="287.0" stylesheets="@../styles/fxmlsetup.css" text="All Open" GridPane.columnIndex="7" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+                    <styleClass>
+                        <String fx:value="labeldark" />
+                        <String fx:value="f24" />
+                    </styleClass>
+                </Label>
+                <Button mnemonicParsing="false" onAction="#buttResetThrottle" text="Reset" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.rowSpan="2" />
+                <Button mnemonicParsing="false" onAction="#buttResetFrontBrake" text="Reset" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.rowSpan="2" />
+                <Button mnemonicParsing="false" onAction="#buttResetRearBrake" text="Reset" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.rowSpan="2" />
+                <TableView fx:id="tableRanking" prefHeight="160.0" prefWidth="221.0" stylesheets="@../styles/fxmlsetup.css" GridPane.columnSpan="3" GridPane.rowIndex="2" GridPane.rowSpan="5">
+                    <columns>
+                        <TableColumn fx:id="tabColPosition" prefWidth="51.0" text="Rank" />
+                        <TableColumn fx:id="tabColName" prefWidth="180.0" text="Name" />
+                        <TableColumn fx:id="tabColLevel" prefWidth="95.0" text="Level" />
+                        <TableColumn fx:id="tabColFrontBrake" prefWidth="48.0" text="F.Break" />
+                        <TableColumn fx:id="tabColRearBrake" prefWidth="50.0" text="R.Break" />
+                        <TableColumn fx:id="tabColThrottle" prefWidth="53.0" text="Throttle" />
+                        <TableColumn fx:id="tabColLean" prefWidth="47.0" text="Lean" />
+                        <TableColumn fx:id="tabColGear" prefWidth="43.0" text="Gear" />
+                        <TableColumn fx:id="tabColScore" prefWidth="53.0" text="Score" />
+                        <TableColumn fx:id="tabColBike" prefWidth="167.0" text="Bike" />
+                    </columns>
+                    <GridPane.margin>
+                        <Insets left="15.0" />
+                    </GridPane.margin>
+                </TableView>
+                <Label fx:id="labGridCircuitSelected" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" prefHeight="33.0" prefWidth="462.0" stylesheets="@../styles/fxmlsetup.css" text="&lt;Circuit selected&gt;" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                    <styleClass>
+                        <String fx:value="labeldark" />
+                        <String fx:value="f24" />
+                    </styleClass>
+                </Label>
+                <Label alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" prefHeight="43.0" prefWidth="326.0" stylesheets="@../styles/fxmlsetup.css" text="RANKINGS" GridPane.columnSpan="2" GridPane.halignment="CENTER">
+                    <styleClass>
+                        <String fx:value="labeldark" />
+                        <String fx:value="f28" />
+                        <String fx:value="f30" />
+                    </styleClass>
+                </Label>
+            </children>
+        </GridPane>
+    </children>
+</AnchorPane>

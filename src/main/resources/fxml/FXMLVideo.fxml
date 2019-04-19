@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="599.0" prefWidth="1017.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.ma.mototrainerp.FXMLVideoController">
+   <children>
+      <Pane fx:id="PaneVideo" layoutX="284.0" layoutY="214.0" prefHeight="414.0" prefWidth="490.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" preserveRatio="false" />
+         </children>
+      </Pane>
+      <AnchorPane layoutX="14.0" layoutY="22.0" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <GridPane opacity="0.5" prefHeight="136.0" prefWidth="496.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="160.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label fx:id="labelPilota" prefHeight="46.0" prefWidth="306.0" styleClass="labelintesta" stylesheets="@../styles/fxmlvideo.css" text="Nome Pilota" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label fx:id="labelBike" prefHeight="45.0" prefWidth="302.0" styleClass="labelintesta" stylesheets="@../styles/fxmlvideo.css" text="Nome Bike" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Button fx:id="buttonExit" mnemonicParsing="false" onAction="#ButBackFromVideoOnAction" prefHeight="47.0" prefWidth="154.0" styleClass="buttonExit" stylesheets="@../styles/fxmlvideo.css" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+               </children>
+            </GridPane>
+            <VBox layoutX="730.0" layoutY="20.0" opacity="0.5" prefHeight="96.0" prefWidth="260.0" spacing="20.0" AnchorPane.rightAnchor="27.0" AnchorPane.topAnchor="20.0">
+               <children>
+                  <Label fx:id="labelLap" prefHeight="38.0" prefWidth="264.0" stylesheets="@../styles/fxmlvideo.css" text="laps" VBox.vgrow="ALWAYS">
+                     <styleClass>
+                        <String fx:value="labelSfondo" />
+                        <String fx:value="laps" />
+                     </styleClass></Label>
+                  <Label fx:id="labelTime" prefHeight="54.0" prefWidth="260.0" stylesheets="@../styles/fxmlvideo.css" text="timer" VBox.vgrow="ALWAYS">
+                     <styleClass>
+                        <String fx:value="labelSfondo" />
+                        <String fx:value="time" />
+                     </styleClass></Label>
+               </children>
+            </VBox>
+            <VBox layoutX="648.0" layoutY="401.0" prefHeight="184.0" prefWidth="357.0" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
+               <children>
+                  <Label opacity="0.46" prefHeight="39.0" prefWidth="89.0" styleClass="labelbreak" stylesheets="@../styles/fxmlvideo.css" text="Front Break" />
+                  <ProgressBar fx:id="progressBarFrontBreak" focusTraversable="false" prefHeight="45.0" prefWidth="355.0" progress="0.77" styleClass="bar-background" stylesheets="@../styles/fxmlvideo.css">
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </ProgressBar>
+                  <Label opacity="0.46" prefHeight="39.0" prefWidth="89.0" styleClass="labelbreak" stylesheets="@../styles/fxmlvideo.css" text="Rear Break" />
+                  <ProgressBar fx:id="progressBarRearBreak" focusTraversable="false" prefHeight="45.0" prefWidth="355.0" progress="0.46" styleClass="bar-background" stylesheets="@../styles/fxmlvideo.css">
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </ProgressBar>
+               </children>
+            </VBox>
+            <Group fx:id="groupThumbs" layoutX="40.0" layoutY="500.0" opacity="0.5" />
+            <AnchorPane fx:id="panePreCount" layoutX="271.0" layoutY="38.0" prefHeight="681.0" prefWidth="302.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="38.0">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="681.0" prefWidth="917.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Text fx:id="textPreCount" stroke="#571111" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="5.0">
+                           <font>
+                              <Font name="Ebrima Bold" size="512.0" />
+                           </font>
+                           <fill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="#e40404" />
+                                    <Stop color="WHITE" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </fill>
+                        </Text>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
