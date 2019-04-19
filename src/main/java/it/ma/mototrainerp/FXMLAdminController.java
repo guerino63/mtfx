@@ -34,6 +34,7 @@ import javafx.stage.FileChooser;
  * @author maria
  */
 public class FXMLAdminController implements Initializable {
+    private static final Logger LOGGER = Logger.getLogger(FXMLAdminController.class.getName());
     @FXML
     private Button buttonClose;
     @FXML
@@ -87,6 +88,7 @@ public class FXMLAdminController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        LOGGER.info("initialize()");
         gridAdmin.setVisible(false);
         tableTolerances.setEditable(true);
 

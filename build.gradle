@@ -15,6 +15,21 @@ repositories {
     mavenCentral()
 }
 
+//Con questo copio direttamente dal sorgente allo .zip/.tar senza passare per la /build
+distributions {
+    main {
+//        baseName = 'conf$$'
+        contents {
+            into ('conf$$'){
+                from 'conf$$'
+            }
+            from 'mtfx.bat' //start dos command
+        }
+    }
+}
+
+
+
 javafx {
     modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.media' ]
 }

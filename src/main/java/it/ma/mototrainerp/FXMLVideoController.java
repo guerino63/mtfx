@@ -87,7 +87,7 @@ public class FXMLVideoController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        LOGGER.info("Initialize video controller!!!");
+        LOGGER.info("initialize()");
 
         Scene scenaSetup = StageManager.getScene(EStage.SETUP);
 //                SCENA.get(SceneManager.LeScene.SETUP).getScene();
@@ -97,6 +97,7 @@ public class FXMLVideoController implements Initializable {
     }
 
     public void postInitialize() {
+        LOGGER.info("postInitialize()");
         //Binds
         FXMLSetupController fxml = (FXMLSetupController) StageManager.getController(EStage.SETUP);
         labelBike.textProperty().bind(fxml.getTextfieldBike().textProperty());

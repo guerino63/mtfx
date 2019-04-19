@@ -24,7 +24,7 @@ public class Prop {
             = Paths.get("conf$$");
 
     public static final Path PATH
-            = Paths.get(System.getProperty("user.home"), ".mototrainerp");
+            = Paths.get(System.getProperty("user.home"), ".mtfx");
 
     //File proprietà
     private static final Path FILPROP = Paths.get(PATH.toString(), "prop.xml");
@@ -105,11 +105,9 @@ public class Prop {
         /**
          * some System info
          */
-        LOGGER.log(Level.INFO, "CWD(<start.bat|.sh> forza la dir prima di chiamare il run .jar)->{0}", System.getProperty("user.dir"));
-//        LOGGER.info("Jar is here(deve combaciare con <Current directory>):"
-//                +Mototrainer.class.getProtectionDomain().getCodeSource().getLocation().getFile() );
-        LOGGER.log(Level.INFO, "Running JAVA Version->{0}", System.getProperty("java.runtime.version"));
-        LOGGER.log(Level.INFO, "Mototrainer Version(JAR Manifest)->{0}", getClass().getPackage().getSpecificationVersion());
+        LOGGER.log(Level.INFO, "Application directory->{0}", System.getProperty("user.dir"));
+        LOGGER.log(Level.INFO, "JAVA Version->{0}", System.getProperty("java.runtime.version"));
+        LOGGER.log(Level.INFO, "mtfx Version(*Manifest)->{0}", getClass().getPackage().getSpecificationVersion());
         /**
          * Se non esiste $user.home.mototrainerp, la creo e copio CONF$$
          * Ma solo se trovo conf in user.dir

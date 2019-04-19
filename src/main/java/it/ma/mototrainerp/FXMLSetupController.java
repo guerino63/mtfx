@@ -31,7 +31,7 @@ import java.util.logging.Logger;
  * @author maria
  */
 public class FXMLSetupController implements Initializable {
-    private static final Logger LOGGER = Logger.getLogger(Prop.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(FXMLSetupController.class.getName());
 
     @FXML
     private ListView<Label> listCircuit;
@@ -126,6 +126,7 @@ public class FXMLSetupController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        LOGGER.info("initialize()");
 
         /**
          * tableview RANKINGS
@@ -177,6 +178,7 @@ public class FXMLSetupController implements Initializable {
     }
 
     public void postInitialize() {
+        LOGGER.info("postInitialize()");
         //BINDINGS ARDUINO
         labAcceleration.textProperty().bind(ArduinoData.ACCELERATORE_PERC.asString("%3d%%"));
         labThrClose.textProperty().bind(ArduinoData.ACCELERATORE_MIN.asString("%6d"));

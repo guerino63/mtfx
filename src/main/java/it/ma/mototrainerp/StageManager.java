@@ -26,14 +26,14 @@ public abstract class StageManager {
     //Lo schermo. 0=monitor interno, 1=esterno
     private static Screen screen;
     //La scena(e le propriet√† stage) attuale
-    private static EStage stageAttuale=null;
+    private static EStage stageAttuale;
 
     /**
      * initialize stage manager
      */
     StageManager init(){
         for (EStage estage : EStage.values()) {
-            stageAttuale = estage;
+            stageAttuale = estage;  //Lo so ridonda, ma alla fine conterr‡ l' ultimo.
             DataStage ds = new DataStage();
             ds.stage = new Stage();
             FXMLLoader loader = new FXMLLoader(getClass().getResource(estage.fxml));

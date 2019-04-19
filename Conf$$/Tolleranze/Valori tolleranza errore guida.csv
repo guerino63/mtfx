@@ -1,0 +1,19 @@
+								
+	Beginner		Intermediate		Expert		Rider	
+	Tollerance							
+front brake	20,00%		30,00%		15,00%		5,00%	
+rear brake	20,00%		30,00%	 solo avviso	15,00%	 solo avviso	5,00%	 solo avviso
+throttle	20,00%		30,00%		15,00%		5,00%	
+lean	20,00%		30,00%		15,00%		5,00%	
+gear	20,00%		30,00%	 solo avviso	15,00%		5,00%	
+	Time to Game Over							
+Time to Game Over	no		2		2		1	
+								
+								
+								
+Note:								
+valori modificabili in admin pannel								
+anche i testi dei messaggi possono essere modificabili								
+quando si cade il video finisce con un video di una caduta (1 video x ogni tipo di errore, tot 5 video)								
+quando ci sono gli avvisi degli errori a video, segue anche audio								
+quando si interrompe, si visualizza l'errore che ha interrotto il giro								
