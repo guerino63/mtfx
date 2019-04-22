@@ -18,14 +18,14 @@ public class Mototrainer extends Application {
         //This is never used, but need to be done at the beginning so can start the
         //static block of class.
         //    private static final Rs232 RS232 = new Rs232();
-        StageManager stageManager = new StageManager(0) {
+        StageManager stageManager = new StageManager(1) {
             @Override
             public void postInit() {
                 /**
                  * After loaded all Stages, we can cross binds stages
-                 * Platform.isFxApplicationThread() is true
+                 * Platform.isFxApplicati onThread() is true
                  */
-                ((FXMLVideoController)StageManager.getController(VIDEO)).postInitialize();
+                ((FXMLVideoController) StageManager.getController(VIDEO)).postInitialize();
                 ((FXMLSetupController) StageManager.getController(SETUP)).postInitialize();
 //                ((FXMLClipsController)StageManager.getController(CLIP)).postInitialize();
             }

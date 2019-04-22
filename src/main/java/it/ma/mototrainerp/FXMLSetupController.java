@@ -13,6 +13,8 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,8 +24,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * FXML Controller class
@@ -31,7 +31,7 @@ import java.util.logging.Logger;
  * @author maria
  */
 public class FXMLSetupController implements Initializable {
-    private static final Logger LOGGER = Logger.getLogger(FXMLSetupController.class.getName());
+    final static Log LOGGER = LogFactory.getLog(FXMLSetupController.class);
 
     @FXML
     private ListView<Label> listCircuit;
@@ -195,7 +195,7 @@ public class FXMLSetupController implements Initializable {
         //Allora uso SimpleStringProperty
 //        labGridCircuitSelected.textProperty().bind(
 //                listCircuit.getSelectionModel().getSelectedItem().textProperty());
-        //eccallà
+        //eccalla'
         labGridCircuitSelected.textProperty().bind(sLabGridCircuitSelected);
         Ut.setSetupBackground();
     }
@@ -236,7 +236,7 @@ public class FXMLSetupController implements Initializable {
                 obListaCircuiti.add(new Label(nameNoExt));
             }
         } catch (IOException ex) {
-            Logger.getLogger(FXMLSetupController.class.getName()).log(Level.SEVERE, null, ex);
+            LOGGER.error("Error importCircuits()", ex);
         }
     }
 

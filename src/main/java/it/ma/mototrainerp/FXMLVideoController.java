@@ -21,11 +21,12 @@ import javafx.scene.media.MediaView;
 import javafx.scene.text.Text;
 import javafx.stage.WindowEvent;
 import javafx.util.Duration;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.net.URL;
 import java.nio.file.Path;
 import java.util.ResourceBundle;
-import java.util.logging.Logger;
 
 
 /**
@@ -35,7 +36,7 @@ import java.util.logging.Logger;
  */
 @SuppressWarnings("unused")
 public class FXMLVideoController implements Initializable {
-    private static final Logger LOGGER = Logger.getLogger(FXMLVideoController.class.getName());
+    final static Log LOGGER = LogFactory.getLog(FXMLVideoController.class);
 
     @FXML
     MediaView mediaView;
@@ -199,7 +200,7 @@ public class FXMLVideoController implements Initializable {
     }
 
     /**
-     * Il filmato precedente partirà daccapo, dato il dispose.
+     * Il filmato precedente partira' daccapo, dato il dispose.
      */
     @SuppressWarnings("unused")
     public void changeVideo() {

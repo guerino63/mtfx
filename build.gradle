@@ -4,11 +4,10 @@ plugins {
     id 'org.openjfx.javafxplugin' version '0.0.7'
 }
 
-mainClassName = 'it.ma.mototrainerp.Launcher'
 
 group 'it.ma'
 version '1.0-SNAPSHOT'
-
+mainClassName = 'it.ma.mototrainerp.Launcher'
 sourceCompatibility = 1.8
 
 repositories {
@@ -18,25 +17,25 @@ repositories {
 //Con questo copio direttamente dal sorgente allo .zip/.tar senza passare per la /build
 distributions {
     main {
-//        baseName = 'conf$$'
+        //        baseName = 'nomezippe'
         contents {
-            into ('conf$$'){
-                from 'conf$$'
+            into ('Conf$$'){
+                from 'Conf$$'
             }
             from 'mtfx.bat' //start dos command
         }
     }
 }
 
-
-
 javafx {
-    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.media' ]
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.media', 'javafx.graphics' ]
 }
 configurations {
     customConfig.extendsFrom implementation
 }
 dependencies {
+    implementation 'log4j:log4j:1.2.17'
+    implementation 'commons-logging:commons-logging:1.2'
     implementation group: 'commons-codec', name: 'commons-codec', version: '1.12'
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
@@ -70,7 +69,7 @@ task tree(type:Exec) {
     }
 
     //store the output instead of printing to the console:
-//    standardOutput = new ByteArrayOutputStream()
+    //    standardOutput = new ByteArrayOutputStream()
 
     //extension method stopTomcat.output() can be used to obtain the output:
     ext.output = {

@@ -35,7 +35,7 @@ public enum EStage {
  * @param width, larghezza stage, se -1 prende tutto lo schermo
  * @param height, altezza stage, se -1 prende tutto lo schermo
  * @param decorated, decorazione = decorato non decorato, trasparente
- * @param modality, modalità = APPLICATION_MODAL, WINDOW_MODAL, NONE
+ * @param modality, modalita = APPLICATION_MODAL, WINDOW_MODAL, NONE
  */
     EStage(String title, String fxml, String css, int x, int y, int width, int height, StageStyle decorated, Modality modality) {
         this.title = title;

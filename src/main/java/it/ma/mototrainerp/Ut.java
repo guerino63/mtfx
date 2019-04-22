@@ -8,6 +8,8 @@ import javafx.collections.transformation.SortedList;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -21,10 +23,9 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class Ut {
+    private final static Log LOGGER = LogFactory.getLog(Ut.class);
         public static void importToleranceFromCSV(ObservableList<Tolerances> table,
             String pathToImport) throws Exception {
 
@@ -55,7 +56,7 @@ public class Ut {
                 }
             }
         } catch (IOException ex) {
-            Logger.getLogger(Ut.class.getName()).log(Level.SEVERE, null, ex);
+            LOGGER.error("", ex);
         }
     }
     public static void importRankFromCSV(ObservableList<CRank> table, String pathToImport) throws Exception {

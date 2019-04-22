@@ -9,8 +9,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,6 +25,8 @@ import javafx.scene.control.cell.ComboBoxTableCell;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * FXML Controller class
@@ -34,7 +34,7 @@ import javafx.stage.FileChooser;
  * @author maria
  */
 public class FXMLAdminController implements Initializable {
-    private static final Logger LOGGER = Logger.getLogger(FXMLAdminController.class.getName());
+    final static Log LOGGER = LogFactory.getLog(FXMLAdminController.class);
     @FXML
     private Button buttonClose;
     @FXML
@@ -95,13 +95,13 @@ public class FXMLAdminController implements Initializable {
         tableTolerances.setItems(TABTOLERANCES);
 //        tableTolerances.getColumns().addAll(firstNameCol, lastNameCol, emailCol);
 
-//      stessa funzionalità con private TableColumn<?, ?> rowHeader
+//      stessa funzionalita con private TableColumn<?, ?> rowHeader
 //      senza dover descrivere classe e tipo 
 //      rowHeaders.setCellValueFactory(new PropertyValueFactory<>("rowHeaders"));
         //Questa è meglio, soprattutto se si deve associare una combo o altro alla cella.
         rowHeaders.setCellValueFactory(cellData -> cellData.getValue().rowHeadersProperty());
         colBeginner.setCellValueFactory(cellData -> cellData.getValue().colBeginnerProperty());
-//il commit non avverrà più solo per uso tasto INVIO      
+//il commit non avverra più solo per uso tasto INVIO
 //        colBeginner.setCellFactory(TextFieldTableCell.forTableColumn());
         colBeginner.setCellFactory(cellData -> {
             return new StringTableCell();
@@ -127,7 +127,7 @@ public class FXMLAdminController implements Initializable {
         try {
             Ut.importToleranceFromCSV(TABTOLERANCES, Prop.FILETOLERANCE.toString());
         } catch (Exception ex) {
-            Logger.getLogger(FXMLAdminController.class.getName()).log(Level.SEVERE, null, ex);
+            LOGGER.error("Errore import file tolleranze", ex);
         }
     }
 
@@ -216,7 +216,7 @@ public class FXMLAdminController implements Initializable {
 //            SceneManager.getActualScene().getStylesheets().add("appCssFile.css");
 //            SCENA.get(SceneManager.LeScene.SETUP).setStyleSheetFromJar();
         } catch (IOException ex) {
-            Logger.getLogger(FXMLAdminController.class.getName()).log(Level.SEVERE, null, ex);
+            LOGGER.error("Error setup background", ex);
         }
     }
 

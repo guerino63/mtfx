@@ -4,15 +4,15 @@ import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.concurrent.ScheduledService;
 import javafx.concurrent.Task;
-
-import java.util.logging.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  *
  * @author maria
  */
 public class ServerLuigi extends ScheduledService<Void> {
-    private static final Logger LOGGER = Logger.getLogger(ServerLuigi.class.getName());
+    private final static Log LOGGER = LogFactory.getLog(ServerLuigi.class);
 
     SimpleStringProperty statusProperty = new SimpleStringProperty();
     SimpleBooleanProperty connectedProperty = new SimpleBooleanProperty();
@@ -60,7 +60,7 @@ public class ServerLuigi extends ScheduledService<Void> {
             super.failed();
             LOGGER.info("failed():Connecting failed.");
             statusProperty.set("Connecting failed.");
-            LOGGER.severe(getException().getMessage());
+            LOGGER.fatal(getException().getMessage());
             reset();
             connectedProperty.set(false);
         }

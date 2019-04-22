@@ -3,11 +3,12 @@ package it.ma.mototrainerp;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * FXML Controller class
@@ -15,8 +16,8 @@ import javafx.scene.control.Button;
  * @author ma
  */
 public class FXMLPostVideoController implements Initializable {
-    private static final Logger LOGGER = Logger.getLogger(FXMLPostVideoController.class.getName());
 
+    final static Log LOGGER = LogFactory.getLog(FXMLPostVideoController.class);
     @FXML
     private Button butExit;
 

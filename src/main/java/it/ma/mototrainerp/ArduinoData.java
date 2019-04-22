@@ -6,15 +6,16 @@ package it.ma.mototrainerp;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import org.apache.commons.codec.binary.Hex;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
-import java.util.logging.Logger;
 
 /**
  *
  * @author maria
  */
 public class ArduinoData {
-    private static final Logger LOGGER = Logger.getLogger(Prop.class.getName());
+    final static Log LOGGER = LogFactory.getLog(ArduinoData.class);
 
     private static final SimpleIntegerProperty ACCELERATORE = new SimpleIntegerProperty(1);
     static public final SimpleIntegerProperty ACCELERATORE_MIN = new SimpleIntegerProperty(65000);

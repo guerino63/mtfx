@@ -1,32 +1,33 @@
-/**
- * File delle proprietà(Singleton)
- * con Prop si accede agli static come i vari paths(es:Prop.CIRCUITI)
- * ed anche alle properties read/write che andranno sul file di proprietà
- * Prop.Desc.FRENO_ANTERIORE_MIN.getValue(XXX), attraverso l' enum Desc.
+/*
+  File delle proprieta(Singleton)
+  con Prop si accede agli static come i vari paths(es:Prop.CIRCUITI)
+  ed anche alle properties read/write che andranno sul file di proprieta
+  Prop.Desc.FRENO_ANTERIORE_MIN.getValue(XXX), attraverso l' enum Desc.
  */
 package it.ma.mototrainerp;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * @author maria
  */
 public class Prop {
-    private static final Logger LOGGER = Logger.getLogger(Prop.class.getName());
+    private final static Log LOGGER = LogFactory.getLog(Prop.class);
 
-    public static final Path PATH_DEFAULT
-            = Paths.get("conf$$");
+    private static final Path PATH_DEFAULT
+            = Paths.get("Conf$$");
 
-    public static final Path PATH
+    private static final Path PATH
             = Paths.get(System.getProperty("user.home"), ".mtfx");
 
-    //File proprietà
+    //File proprieta'
     private static final Path FILPROP = Paths.get(PATH.toString(), "prop.xml");
     //Path circuiti
     public static final Path CIRCUITI = Paths.get(PATH.toString(), "circuiti");
@@ -102,56 +103,52 @@ public class Prop {
     }
 
     public void oneShotLoadProperties() {
-        /**
-         * some System info
+        /*
+          some System info
          */
-        LOGGER.log(Level.INFO, "Application directory->{0}", System.getProperty("user.dir"));
-        LOGGER.log(Level.INFO, "JAVA Version->{0}", System.getProperty("java.runtime.version"));
-        LOGGER.log(Level.INFO, "mtfx Version(*Manifest)->{0}", getClass().getPackage().getSpecificationVersion());
-        /**
-         * Se non esiste $user.home.mototrainerp, la creo e copio CONF$$
-         * Ma solo se trovo conf in user.dir
+        LOGGER.info("Application directory->"+ System.getProperty("user.dir"));
+        LOGGER.info("JAVA Version->"+ System.getProperty("java.runtime.version"));
+        LOGGER.info("mtfx Version(*Manifest)->"+ getClass().getPackage().getSpecificationVersion());
+        /*
+          Se non esiste $user.home.mototrainerp, la creo e copio CONF$$
+          Ma solo se trovo conf in user.dir
          */
         if (!Files.exists(PATH) && Files.exists(PATH_DEFAULT)) {
-            LOGGER.log(Level.INFO, "Create {0} Directory", Prop.PATH);
+            LOGGER.info("Create "+Prop.PATH+" Directory" );
             UtCopy cp = fileC -> LOGGER.info(fileC);
             try {
                 cp.copyFolder(PATH_DEFAULT, PATH);
             } catch (IOException ex) {
-                Logger.getLogger(Prop.class.getName()).log(Level.SEVERE, null, ex);
+                LOGGER.error("", ex);
             }
         } else {
-            LOGGER.log(Level.INFO, "{0} exists or {1} not found, skip files copy.", new Object[]{PATH, PATH_DEFAULT});
+            LOGGER.info(PATH+" exists or "+PATH_DEFAULT+" not found, skip files copy.");
         }
 
         boolean erroreParse = false;
         try {
             FileInputStream fi = new FileInputStream(FILPROP.toFile());
             PROP.loadFromXML(fi);
-        } catch (FileNotFoundException ex) {
-            erroreParse = true;
-            Logger.getLogger(Prop.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             erroreParse = true;
-            Logger.getLogger(Prop.class.getName()).log(Level.SEVERE, null, ex);
+            LOGGER.error("", ex);
         } finally {
             if (erroreParse) {
-                LOGGER.warning("Properties file not correct,"
-                        + "Will be used default data.");
+                LOGGER.warn("Properties file not correct, will be used default data.");
             } else{
                 LOGGER.info("Properties file correctly read.");
             }
         }
-        LOGGER.log(Level.INFO, "Properties initialized!{0}", (erroreParse) ? "...anyway" : "");
+        LOGGER.info("Properties initialized!"+ ((erroreParse) ? "...anyway" : ""));
     }
 
     /**
      * !!!!!!!!!! Ultimo blocco statico da eseguire!!!!! NON MUOVERE. Carica il
-     * file di proprietà, che necessita di tutte le variabili precedenti mettilo
+     * file di proprieta', che necessita di tutte le variabili precedenti mettilo
      * sempre per ultimo.
      */
     private Prop() {
-        LOGGER.log(Level.INFO, "File properties:{0}", FILPROP.toUri().toString());
+        LOGGER.info("File properties:"+ FILPROP.toUri().toString());
     }
 
     /**
@@ -162,7 +159,7 @@ public class Prop {
             FileOutputStream fi = new FileOutputStream(FILPROP.toFile());
             PROP.storeToXML(fi, "File properties");
         } catch (IOException ex) {
-            Logger.getLogger(Prop.class.getName()).log(Level.SEVERE, null, ex);
+            LOGGER.error("", ex);
         }
     }
 
@@ -182,13 +179,13 @@ public class Prop {
         LOGGER.info("...Default values");
         for (Desc f : Desc.values()) {
             f.setDefaultValue();
-            LOGGER.log(Level.INFO, "{0}={1}", new Object[]{f.name(), f.getValue()});
+            LOGGER.info( f.name()+"="+ f.getValue());
         }
         LOGGER.info("...rewrite the default values");
         int i = 0;
         for (Desc f : Desc.values()) {
             f.setValue(i++ + "");
-            LOGGER.log(Level.INFO, "{0}={1}", new Object[]{f.name(), f.getValue()});
+            LOGGER.info(f.name()+"="+f.getValue());
         }
     }
 }

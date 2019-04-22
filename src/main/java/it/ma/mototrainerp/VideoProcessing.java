@@ -10,15 +10,15 @@ import javafx.beans.Observable;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.util.Duration;
-
-import java.util.logging.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  *
  * @author maria
  */
 public class VideoProcessing {
-    private static final Logger LOGGER = Logger.getLogger(VideoProcessing.class.getName());
+    private final static Log LOGGER = LogFactory.getLog(VideoProcessing.class);
 
     private final MediaPlayer mp;
     private final FXMLVideoController fxmlVideo;
